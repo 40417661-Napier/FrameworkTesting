@@ -1,0 +1,14 @@
+{
+  "name": "reddit_framework",
+  "version": "0.0.1",
+  "description": "reddit framework for framework x",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "snoowrap": "^1.19.0"
+  }
+}

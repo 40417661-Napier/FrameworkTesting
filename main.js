@@ -41,10 +41,17 @@ function createRedditWindow () {
     height: 768,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
-    }
+    },
+    title: 'Framework X'
   })
 
-  mainWindow.loadURL('http://127.0.0.1:80')
+  mainWindow.on('page-title-updated', (evt) => {
+    evt.preventDefault();
+  });
+
+  // mainWindow.loadURL('http://127.0.0.1:80')
+  mainWindow.loadURL("https://www.reddit.com")
+
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
