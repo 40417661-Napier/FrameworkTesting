@@ -1,3 +1,6 @@
+// Modules for Reddit API linking
+'use strict';
+const snoowrap = require('snoowrap');
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
@@ -9,8 +12,8 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1366,
+    height: 768,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -31,10 +34,33 @@ function createWindow () {
   })
 }
 
+function createRedditWindow () {
+  // Create the browser window.
+  mainWindow = new BrowserWindow({
+    width: 1366,
+    height: 768,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
+  })
+
+  mainWindow.loadURL('http://127.0.0.1:80')
+
+  // Emitted when the window is closed.
+  mainWindow.on('closed', function () {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null
+  })
+}
+
+
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', createRedditWindow)
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {

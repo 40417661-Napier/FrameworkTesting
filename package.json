@@ -18,5 +18,8 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^6.0.0"
+  },
+  "dependencies": {
+    "snoowrap": "^1.19.0"
   }
 }
