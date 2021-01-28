@@ -11,7 +11,7 @@
   "author": "NbAsk",
   "license": "",
   "devDependencies": {
-    "electron": "^7.2.4"
+    "electron": "^9.4.0"
   },
   "dependencies": {
     "snoowrap": "^1.19.0"
